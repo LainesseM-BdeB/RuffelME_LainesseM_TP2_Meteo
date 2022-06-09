@@ -68,3 +68,37 @@ body {
 .search-form-item {
     margin: 10px
 }
+
+.meteo-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meteo-body-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meteo-body-header-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meteo-body-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-item {
+    margin: 10px;
+}
