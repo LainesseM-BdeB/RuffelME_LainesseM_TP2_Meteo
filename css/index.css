@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Montserrat Header";
+    src: url("../ressources/font/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat Text";
+    src: url("../ressources/font/Montserrat-Light.ttf") format("truetype");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat Header", serif;
+    color: black;
+}
+
+body {
+    font-family: "Montserrat Text", serif;
+    font-size: 16px;
+    color: black;
+}
