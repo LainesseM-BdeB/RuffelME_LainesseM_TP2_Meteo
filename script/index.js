@@ -1,3 +1,9 @@
+//Exemple de creation d'objet Meteo -> test = new Meteo("01-01-2020", "-15", "-25", "-10")
+const fullMeteoData = new Map();
+
+window.onload = function() {
+    parseMeteo();
+};
 
 let routes = {};
 let templates = {};

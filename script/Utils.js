@@ -1,3 +1,0 @@
-function parseMeteo(file) {
-    
-}
