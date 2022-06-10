@@ -5,6 +5,17 @@ window.onload = function() {
     parseMeteo();
 };
 
+document.querySelector("#jours7").addEventListener("click", e => {
+    console.log(e.target.id)
+})
+document.querySelector("#jours14").addEventListener("click", e => {
+    console.log(e.target.id)
+})
+document.querySelector("#mensuel").addEventListener("click", e => {
+    console.log(e.target.id)
+})
+
+
 let routes = {};
 let templates = {};
 
