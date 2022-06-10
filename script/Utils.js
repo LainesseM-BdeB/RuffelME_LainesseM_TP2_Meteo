@@ -1,0 +1,3 @@
+function parseMeteo(file) {
+    
+}

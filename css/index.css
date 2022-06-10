@@ -110,3 +110,13 @@ body {
     background-color: #f9e07f;
     color: black;
 }
+
+.btn:hover {
+    background-color: #baeeff;
+    color: black;
+}
+
+.btn:focus {
+    background-color: #baeeff;
+    color: black;
+}

@@ -1,3 +1,4 @@
+//Exemple de creation d'objet Meteo -> test = new Meteo("01-01-2020", "-15", "-25", "-10")
 
 let routes = {};
 let templates = {};
@@ -5,18 +6,18 @@ let templates = {};
 let app_div = document.getElementById("app");
 
 
-function home(){
+function home() {
 
-let div = document.createElement('div');
-let link = document.createElement('a');
-link.href = '#/about';
-link.innerText = 'About';
+    let div = document.createElement('div');
+    let link = document.createElement('a');
+    link.href = '#/about';
+    link.innerText = 'About';
 
-div.innerHTML = '<h1 align = "Center">Home</h1>';
+    div.innerHTML = '<h1 align = "Center">Home</h1>';
 
-div.appendChild(link);
+    div.appendChild(link);
 
-app_div.appendChild(div);
+    app_div.appendChild(div);
 }
 
 function about() {
@@ -29,28 +30,28 @@ function about() {
     div.appendChild(link);
 
     app_div.appendChild(div);
-};
+}
 
-function route (path, template) {
+function route(path, template) {
     if (typeof template === 'function') {
         return routes[path] = template;
-    }
-    else if (typeof template === 'string') {
+    } else if (typeof template === 'string') {
         return routes[path] = templates[template];
     } else {
         return;
-    };
-};
+    }
 
-function template (name, templateFunction) {
+}
+
+function template(name, templateFunction) {
     return templates[name] = templateFunction;
-};
+}
 
-template('home', function(){
+template('home', function () {
     home();
 });
 
-template('about', function(){
+template('about', function () {
     about();
 });
 route('/', 'home');
@@ -61,14 +62,16 @@ function resolveRoute(route) {
         return routes[route];
     } catch (e) {
         throw new Error(`Route ${route} not found`);
-    };
-};
+    }
+
+}
 
 function router(evt) {
     let url = window.location.hash.slice(1) || '/';
     let route = resolveRoute(url);
 
     route();
-};
+}
+
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);
