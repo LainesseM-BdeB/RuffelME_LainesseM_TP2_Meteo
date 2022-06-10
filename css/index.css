@@ -18,7 +18,7 @@ body {
     font-size: 16px;
     color: black;
     padding: 50px;
-    background-color: lightblue;
+    background-color: white;
 }
 
 
@@ -26,11 +26,11 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 5px solid lightcyan;
+    border: 5px solid #f9e07f;
     border-radius: 20px;
     margin: 20px;
     padding: 30px;
-    background-color: lightgrey;
+    background-color: #baeeff;
 }
 
 .header-item {
@@ -46,7 +46,10 @@ body {
 .logo {
     width: 100px;
     height: auto;
-    padding: 0 20px 0 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50px;
+    margin: 5px;
 }
 
 .search-body {
@@ -60,8 +63,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: lightgray;
-    border: solid lightcyan;
+    background-color: #baeeff;
+    border: solid #f9e07f;
     border-radius: 20px;
 }
 
@@ -101,4 +104,9 @@ body {
 
 .footer-item {
     margin: 10px;
+}
+
+.btn {
+    background-color: #f9e07f;
+    color: black;
 }
