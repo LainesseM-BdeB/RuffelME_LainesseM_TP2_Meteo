@@ -19,7 +19,7 @@ document.querySelector("#mensuel").addEventListener("click", e => {
 let routes = {};
 let templates = {};
 
-let app_div = document.getElementById("app");
+let app_div = document.getElementById('app');
 
 
 function home() {
@@ -29,14 +29,14 @@ function home() {
     link.href = '#/about';
     link.innerText = 'About';
 
-    div.innerHTML = '<h1 align = "Center">Home</h1>';
+    div.innerHTML = '<h1>Home</h1>';
 
     div.appendChild(link);
 
     app_div.appendChild(div);
 }
 
-function about() {
+function about () {
     let div = document.createElement('div');
     let link = document.createElement('a');
     link.href = '#/';
@@ -48,7 +48,7 @@ function about() {
     app_div.appendChild(div);
 }
 
-function route(path, template) {
+function route (path, template) {
     if (typeof template === 'function') {
         return routes[path] = template;
     } else if (typeof template === 'string') {
