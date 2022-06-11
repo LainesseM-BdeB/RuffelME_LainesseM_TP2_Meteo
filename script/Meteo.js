@@ -4,8 +4,6 @@ _day = Date du jour
 _temp = température actuelle(moyenne)
 _minTemp = température minimum
 _maxTemp = température maximum
-
-Il est à évaluer la nécéssité de la classe pour le bon roulement de la page web
 */
 class Meteo {
     constructor(day, temp, minTemp, maxTemp) {
