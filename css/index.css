@@ -58,6 +58,41 @@ body {
     align-items: center;
 }
 
+#app {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+th, td {
+    background-color: #baeeff;
+  }
+
+  table, th, td {
+   
+   
+    border: 3px solid #f9e07f;
+    border-collapse: collapse;
+  }
+
+  td{
+
+    width: 150px;
+    height: 150px;
+    text-align: center;
+  
+    }
+
+  th{
+
+  width: 400px;
+  height: 400px;
+  text-align: center;
+
+  }
+
 .search-form {
     display: flex;
     justify-content: center;
