@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=500px, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -41,13 +41,49 @@
             Prévisions
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><button type="button" class="dropdown-item" id="jours7" href="#">7 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="jours14" href="#">14 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="mensuel" href="#">Mensuel</button></li>
+            <li><button type="button" class="dropdown-item" id="jours7" href="#" onclick="pred3()">3 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="jours14" href="#"  onclick="pred7()">7 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="pred14()">14 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="predMensuel()">Mensuel</button></li>
         </ul>
     </div>
 </div>
+
+
+
 <div id="app"></div>
+
+<template class = "template" >
+    <table> 
+        <tr class="J1">
+            <th rowspan="4">1 jours</th>
+        </tr>
+
+        <tr>
+            <td class="JJ">jours 2</td>
+        </tr>
+
+        <tr>
+            <td class="JJ">jours 3</td>
+        </tr>
+
+        <tr>
+            <td class="JJ">jours 4</td>
+        </tr>
+
+
+
+
+
+    </table>
+</template>
+
+<template class = "template" ><h1>7 Jours</h1></template>
+
+<template class = "template" ><h1>14 Jours</h1></template>
+
+<template class = "template" ><h1>Mensu</h1></template>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script/index.js"></script>
