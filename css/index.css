@@ -65,6 +65,13 @@ body {
     align-items: center;
 
 }
+#app2 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 th, td {
     background-color: #baeeff;
@@ -77,13 +84,22 @@ th, td {
     border-collapse: collapse;
   }
 
-  td{
 
-    width: 150px;
-    height: 150px;
-    text-align: center;
-  
+    .JJ{
+        width: 150px;
+        height: 150px;
+        text-align: center;
+
     }
+  
+
+    .J7{
+        width: 400px;
+        height: 400px;
+        text-align: center;
+
+    }
+ 
 
   th{
 

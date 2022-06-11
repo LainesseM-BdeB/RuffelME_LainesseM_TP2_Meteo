@@ -41,10 +41,10 @@
             Prévisions
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><button type="button" class="dropdown-item" id="jours7" href="#" onclick="pred3()">3 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="jours14" href="#"  onclick="pred7()">7 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="pred14()">14 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="predMensuel()">Mensuel</button></li>
+            <li><button type="button" class="dropdown-item" id="jours7" href="#" onclick="Pred3()">3 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="jours14" href="#"  onclick="Pred7()">7 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="Pred14()">14 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="PredMensuel()">Mensuel</button></li>
         </ul>
     </div>
 </div>
@@ -52,6 +52,7 @@
 
 
 <div id="app"></div>
+
 
 <template class = "template" >
     <table> 
@@ -71,16 +72,50 @@
             <td class="JJ">jours 4</td>
         </tr>
 
-
-
-
-
     </table>
 </template>
 
-<template class = "template" ><h1>7 Jours</h1></template>
 
-<template class = "template" ><h1>14 Jours</h1></template>
+<template class = "template" >
+    <table>
+ <tr>
+     <td class="J7">jours 2</td>
+     <td class="J7">jours 3</td>
+     <td class="J7">jours 4</td>
+     <td class="J7">jours 5</td>
+     <td class="J7">jours 6</td>
+     <td class="J7">jours 7</td>
+     <td class="J7">jours 8</td>
+ </tr>
+</table>
+
+</template>
+
+<template class = "template" >
+    <table>
+        <tr>
+            <td class="J7">jours 2</td>
+            <td class="J7">jours 3</td>
+            <td class="J7">jours 4</td>
+            <td class="J7">jours 5</td>
+            <td class="J7">jours 6</td>
+            <td class="J7">jours 7</td>
+            <td class="J7">jours 8</td>
+        </tr>
+        <tr>
+           <td class="J7">jours 2</td>
+           <td class="J7">jours 3</td>
+           <td class="J7">jours 4</td>
+           <td class="J7">jours 5</td>
+           <td class="J7">jours 6</td>
+           <td class="J7">jours 7</td>
+           <td class="J7">jours 8</td>
+       </tr>
+       
+       </table>
+
+
+</template>
 
 <template class = "template" ><h1>Mensu</h1></template>
 
@@ -90,3 +125,5 @@
 <script src="script/Meteo.js"></script>
 <script src="script/utils.js"></script>
 </html>
+
+

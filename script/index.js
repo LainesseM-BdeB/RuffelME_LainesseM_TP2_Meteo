@@ -2,7 +2,7 @@
 const fullMeteoData = new Map();
 
 let app_div = document.getElementById("app");
-
+let app_div2 = document.getElementById("app2");
 
 window.onload = function() {
     parseMeteo();
@@ -19,53 +19,59 @@ document.querySelector("#mensuel").addEventListener("click", e => {
 })
 
 
+//Permet de choisir quelle template que l'on veut lors de la creation des fonctions(N.B. a choisir selon l'ordre de creation dans le .html)
 function TempSelect(whichTemp) { 
     let template;
     return template = document.getElementsByTagName("template")[whichTemp];
 }
 
-function pred3(){
-    clearBox();
+//Fonction afficher le 3 jours
+function Pred3(){
+    clearBox("app");
     let clon = TempSelect(0).content.cloneNode(true);
     app_div.appendChild(clon);
 
 }
-function pred7(){
+//Fonction afficher le 7 jours
+function Pred7(){
 
-    clearBox();
+    clearBox("app");
     let clon = TempSelect(1).content.cloneNode(true);
     app_div.appendChild(clon);
+   
+  
 
 }
 
-function pred14(){
 
-    clearBox();
+//Fonction afficher le 14 jours
+function Pred14(){
+
+    clearBox("app"); 
     let clon = TempSelect(2).content.cloneNode(true);
     app_div.appendChild(clon);
 
 }
 
+//Fonction afficher le  Mois
+function PredMensuel(){
 
-function predMensuel(){
-
-    clearBox();
+    clearBox("app");
     let clon = TempSelect(3).content.cloneNode(true);
     app_div.appendChild(clon);
 
 }
 
-function ImageRandomizer() { 
-    
 
 
-}
-
-function clearBox() {
+//Permet d'effacer le div ayant le clone du template
+function clearBox(toDelete) {
   
-    while(app_div.firstChild) {
-        app_div.removeChild(app_div.firstChild);
+    let deleter = document.getElementById(toDelete);
+    while(deleter.firstChild) {
+        deleter.removeChild(deleter.firstChild);
     }
 }
 
 
+// template pour les cases  ,faire le mois , 
