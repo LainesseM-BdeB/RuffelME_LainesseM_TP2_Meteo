@@ -8,7 +8,12 @@
     src: url("../ressources/font/Montserrat-Light.ttf") format("truetype");
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Montserrat Header", serif;
     color: black;
 }
@@ -20,7 +25,6 @@ body {
     padding: 50px;
     background-color: white;
 }
-
 
 .header {
     display: flex;
@@ -34,7 +38,6 @@ body {
 }
 
 .header-item {
-
 }
 
 .header-logo {
@@ -59,39 +62,34 @@ body {
 }
 
 #app {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-th, td {
+th,
+td {
     background-color: #baeeff;
-  }
+}
 
-  table, th, td {
-   
-   
+table,
+th,
+td {
     border: 3px solid #f9e07f;
     border-collapse: collapse;
-  }
+}
 
-  td{
-
+td {
     width: 150px;
     height: 150px;
     text-align: center;
-  
-    }
+}
 
-  th{
-
-  width: 400px;
-  height: 400px;
-  text-align: center;
-
-  }
+th {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
 
 .search-form {
     display: flex;
@@ -104,7 +102,7 @@ th, td {
 }
 
 .search-form-item {
-    margin: 10px
+    margin: 10px;
 }
 
 .meteo-body {

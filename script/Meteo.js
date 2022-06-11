@@ -8,7 +8,6 @@ _maxTemp = température maximum
 Il est à évaluer la nécéssité de la classe pour le bon roulement de la page web
 */
 class Meteo {
-
     constructor(day, temp, minTemp, maxTemp) {
         this._day = day;
         this._temp = temp;
