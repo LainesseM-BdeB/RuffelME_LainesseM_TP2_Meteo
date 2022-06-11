@@ -1,38 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=500px, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Météo Montréal</title>
-</head>
-<body>
-<div class="header">
-    <div class="header-logo">
-        <img src="ressources/img/logo.png" class="header-item logo">
-        <h1 class="header-item">IFAKOI</h1>
-    </div>
-    <h3 class="header-item">La Météo de chez vous</h3>
-</div>
-<div class="search-body">
-    <form class="search-form">
-        <label for="ville" class="search-form-item">
-            Il fait quoi à
-        </label>
-        <input type="text" id="ville" name="ville" class="search-form-item">
-        <input type="submit" id="submitVille" name="submitVille" value="Ifakoi"
-               class="search-form-item btn btn-primary">
-    </form>
-</div>
-<div class="meteo-body">
-    <div class="meteo-body-header">
-        <h3 class="meteo-body-header-text">
-            <!--Place pour le texte après la recherche: 'Voici la température à'-->
-        </h3>
-    </div>
-    <div class="meteo-body-body">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=500px, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="css/index.css" />
+        <title>Météo Montréal</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-logo">
+                <img src="ressources/img/logo.png" class="header-item logo" />
+                <h1 class="header-item">IFAKOI</h1>
+            </div>
+            <h3 class="header-item">La Météo de chez vous</h3>
+        </div>
+        <div class="search-body">
+            <form class="search-form">
+                <label for="ville" class="search-form-item">
+                    Il fait quoi à
+                </label>
+                <input
+                    type="text"
+                    id="ville"
+                    name="ville"
+                    class="search-form-item"
+                />
+                <input
+                    type="submit"
+                    id="submitVille"
+                    name="submitVille"
+                    value="Ifakoi"
+                    class="search-form-item btn btn-primary"
+                />
+            </form>
+        </div>
+        <div class="meteo-body">
+            <div class="meteo-body-header">
+                <h3 class="meteo-body-header-text">
+                    <!--Place pour le texte après la recherche: 'Voici la température à'-->
+                </h3>
+            </div>
+            <div class="meteo-body-body"></div>
+        </div>
+        <div class="footer">
+            <div class="btn-group dropup footer-item">
+                <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle footer-body-item"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    Prévisions
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="jours3"
+                            href="#"
+                            onclick="pred3()"
+                        >
+                            3 Jours
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="jours7"
+                            href="#"
+                            onclick="pred7()"
+                        >
+                            7 Jours
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="jours14"
+                            href="#"
+                            onclick="pred14()"
+                        >
+                            14 Jours
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="mensuel"
+                            href="#"
+                            onclick="predMensuel()"
+                        >
+                            Mensuel
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+<<<<<<< HEAD
     </div>
 </div>
 <div class="footer">
@@ -48,11 +124,25 @@
         </ul>
     </div>
 </div>
+=======
+        <div id="app"></div>
+>>>>>>> 6a88ee57859b08309b481c34f681ce077fd9a8f8
 
+        <template class="template">
+            <table>
+                <tr class="J1">
+                    <th rowspan="4">1 jours</th>
+                </tr>
 
+                <tr>
+                    <td class="JJ">jours 2</td>
+                </tr>
 
-<div id="app"></div>
+                <tr>
+                    <td class="JJ">jours 3</td>
+                </tr>
 
+<<<<<<< HEAD
 
 <template class = "template" >
     <table> 
@@ -127,3 +217,25 @@
 </html>
 
 
+=======
+                <tr>
+                    <td class="JJ">jours 4</td>
+                </tr>
+            </table>
+        </template>
+        <template class="template">
+            <h1>7 Jours</h1>
+        </template>
+        <template class="template">
+            <h1>14 Jours</h1>
+        </template>
+        <template class="template">
+            <h1>Mensuel</h1>
+        </template>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/index.js"></script>
+    <script src="script/Meteo.js"></script>
+    <script src="script/utils.js"></script>
+</html>
+>>>>>>> 6a88ee57859b08309b481c34f681ce077fd9a8f8

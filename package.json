@@ -1,0 +1,8 @@
+{
+    "name": "RuffelME_LainesseM_TP2_Meteo",
+    "version": "1.0.0",
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "^2.6.2"
+    }
+}
