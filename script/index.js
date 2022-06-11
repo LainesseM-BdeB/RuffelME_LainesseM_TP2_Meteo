@@ -1,6 +1,9 @@
 //Exemple de creation d'objet Meteo -> test = new Meteo("01-01-2020", "-15", "-25", "-10")
 const fullMeteoData = new Map();
 
+let app_div = document.getElementById("app");
+
+
 window.onload = function() {
     parseMeteo();
 };
@@ -16,78 +19,53 @@ document.querySelector("#mensuel").addEventListener("click", e => {
 })
 
 
-let routes = {};
-let templates = {};
-
-let app_div = document.getElementById('app');
-
-
-function home() {
-
-    let div = document.createElement('div');
-    let link = document.createElement('a');
-    link.href = '#/about';
-    link.innerText = 'About';
-
-    div.innerHTML = '<h1>Home</h1>';
-
-    div.appendChild(link);
-
-    app_div.appendChild(div);
+function TempSelect(whichTemp) { 
+    let template;
+    return template = document.getElementsByTagName("template")[whichTemp];
 }
 
-function about () {
-    let div = document.createElement('div');
-    let link = document.createElement('a');
-    link.href = '#/';
-    link.innerText = 'Home';
+function pred3(){
+    clearBox();
+    let clon = TempSelect(0).content.cloneNode(true);
+    app_div.appendChild(clon);
 
-    div.append = '<h3>About</h3>';
-    div.appendChild(link);
+}
+function pred7(){
 
-    app_div.appendChild(div);
+    clearBox();
+    let clon = TempSelect(1).content.cloneNode(true);
+    app_div.appendChild(clon);
+
 }
 
-function route (path, template) {
-    if (typeof template === 'function') {
-        return routes[path] = template;
-    } else if (typeof template === 'string') {
-        return routes[path] = templates[template];
-    } else {
-        return;
+function pred14(){
+
+    clearBox();
+    let clon = TempSelect(2).content.cloneNode(true);
+    app_div.appendChild(clon);
+
+}
+
+
+function predMensuel(){
+
+    clearBox();
+    let clon = TempSelect(3).content.cloneNode(true);
+    app_div.appendChild(clon);
+
+}
+
+function ImageRandomizer() { 
+    
+
+
+}
+
+function clearBox() {
+  
+    while(app_div.firstChild) {
+        app_div.removeChild(app_div.firstChild);
     }
-
 }
 
-function template(name, templateFunction) {
-    return templates[name] = templateFunction;
-}
 
-template('home', function () {
-    home();
-});
-
-template('about', function () {
-    about();
-});
-route('/', 'home');
-route('/about', 'about');
-
-function resolveRoute(route) {
-    try {
-        return routes[route];
-    } catch (e) {
-        throw new Error(`Route ${route} not found`);
-    }
-
-}
-
-function router(evt) {
-    let url = window.location.hash.slice(1) || '/';
-    let route = resolveRoute(url);
-
-    route();
-}
-
-window.addEventListener('load', router);
-window.addEventListener('hashchange', router);
