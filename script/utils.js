@@ -23,11 +23,30 @@ function findWeather(temp) {
     } else if (temp <= 10) {
         weather = "icon-pluie.png";
     } else if (temp <= 20) {
-        weather = "icon-nuage.png";
+        weather = "./ressources/img/icon-nuage.png";
     } else {
-        weather = "icon.soleil.png";
+        weather = "./ressources/img/icon.soleil.png";
     }
     return weather;
+}
+
+
+let tempToSwap = document.getElementById("tempToSwap");
+
+function CreateImage(weather) {
+    let images = document.getElementById("image");
+    let img = document.createElement("img");
+    img.setAttribute("src", weather);
+    images.appendChild(img);
+    return false;
+  }
+
+function swap() { 
+
+
+    
+    CreateImage(findWeather(20));
+
 }
 
 function selectMonth(month) {
