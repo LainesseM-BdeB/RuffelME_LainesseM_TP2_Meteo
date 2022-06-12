@@ -10,14 +10,14 @@ document.querySelector("#submitVille").addEventListener("click", evt => {
     ChangeCityName();
 })
 
-function ChangeCityName() { 
+function ChangeCityName() {
 
     let cityValue = document.getElementById("ville").value;
     GetCityText(cityValue);
 
 }
 
-function GetCityText(citySpace) { 
+function GetCityText(citySpace) {
 
     let cityName = document.getElementById("CityName");
     cityName.innerHTML = citySpace;
@@ -26,8 +26,8 @@ function GetCityText(citySpace) {
 
 let pred = document.getElementById("prediction");
 
+window.onload = function () {};
 
-window.onload = function() {}
 window.onload = function () {
     parseMeteo();
 };
@@ -42,9 +42,22 @@ document.querySelector("#mensuel").addEventListener("click", (e) => {
     console.log(e.target.id);
 });
 
+function findWeather(temp) {
+    let weather;
+    if (temp <= 0) {
+        weather = "icon-neige.png";
+    } else if (temp <= 10) {
+        weather = "icon-pluie.png";
+    } else if (temp <= 20) {
+        weather = "icon-nuage.png";
+    } else {
+        weather = "icon-soleil.png";
+    }
+    return weather;
+}
 
 //Permet de choisir quelle template que l'on veut lors de la creation des fonctions(N.B. a choisir selon l'ordre de creation dans le .html)
-   function TempSelect(whichTemp) {
+function TempSelect(whichTemp) {
 
     let template;
     return (template = document.getElementsByTagName("template")[whichTemp]);
@@ -68,7 +81,6 @@ function Pred14() {
     pred.appendChild(clon);
 }
 
-
 //Fonction afficher le  Mois
 function PredMensuel() {
     clearBox();
@@ -77,20 +89,17 @@ function PredMensuel() {
 }
 
 
+
 //Permet d'effacer le div ayant le clone du template
 function clearBox(toDelete) {
-  
     let deleter = document.getElementById(toDelete);
     while(deleter.firstChild) {
         deleter.removeChild(deleter.firstChild);
     }
 }
 
-
-// template pour les cases 
 function clearBox() {
     while (pred.firstChild) {
         pred.removeChild(pred.firstChild);
     }
 }
-
