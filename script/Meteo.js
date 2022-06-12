@@ -13,7 +13,7 @@ class Meteo {
         this._maxTemp = maxTemp;
     }
 
-    get day() {
+    get getDay() {
         return this._day;
     }
 
