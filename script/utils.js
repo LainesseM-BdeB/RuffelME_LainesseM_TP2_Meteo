@@ -17,14 +17,28 @@ function parseMeteo() {
 }
 
 function fillMeteo(range, date, mensuel = false) {
-    let i = 0;
     let day = new Date(date);
+    let max;
+    day.setDate(day.getDate() - 1);
     if (mensuel) {
         day.setDate(0);
+        let tempDate = new Date(day);
+        tempDate.setDate(tempDate.getDate() - 1);
+        max = tempDate.getMonth() + 1;
+        console.log(day.getMonth(), max);
     }
-    for (const box in range) {
-        createDay(fullMeteoData.get(day.toISOString().slice(0, 10)));
+    for (const box of range) {
+        console.log(day.getMonth());
+        console.log(max);
+        console.log(day);
+        box.appendChild(
+            createDay(fullMeteoData.get(day.toISOString().slice(0, 10)))
+        );
         day.setDate(day.getDate() + 1);
+        if (day.getMonth() > max) {
+            box.removeChild(box.lastChild);
+            break;
+        }
     }
 }
 
@@ -142,5 +156,5 @@ function createDay(day) {
     dayFrame.appendChild(row1);
     dayFrame.appendChild(row2);
 
-    document.body.appendChild(dayFrame);
+    return dayFrame;
 }

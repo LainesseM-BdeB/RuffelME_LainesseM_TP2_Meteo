@@ -1,27 +1,21 @@
 //Exemple de creation d'objet Meteo -> test = new Meteo("01-01-2020", "-15", "-25", "-10")
 const fullMeteoData = new Map();
 
-
-
-document.querySelector("#submitVille").addEventListener("click", evt => {
-    evt.preventDefault()
+document.querySelector("#submitVille").addEventListener("click", (evt) => {
+    evt.preventDefault();
     //Do what you want
     Pred3();
     ChangeCityName();
-})
+});
 
 function ChangeCityName() {
-
     let cityValue = document.getElementById("ville").value;
     GetCityText(cityValue);
-
 }
 
 function GetCityText(citySpace) {
-
     let cityName = document.getElementById("CityName");
     cityName.innerHTML = citySpace;
-
 }
 
 let pred = document.getElementById("prediction");
@@ -61,7 +55,6 @@ function findWeather(temp) {
 
 //Permet de choisir quelle template que l'on veut lors de la creation des fonctions(N.B. a choisir selon l'ordre de creation dans le .html)
 function TempSelect(whichTemp) {
-
     let template;
     return (template = document.getElementsByTagName("template")[whichTemp]);
 }
@@ -71,17 +64,23 @@ function Pred3() {
     clearBox();
     let clon = TempSelect(0).content.cloneNode(true);
     pred.appendChild(clon);
+    let range = document.querySelectorAll(".JJ");
+    fillMeteo(range, Date.now());
 }
 function Pred7() {
     clearBox();
     let clon = TempSelect(1).content.cloneNode(true);
     pred.appendChild(clon);
+    let range = document.querySelectorAll(".J7");
+    fillMeteo(range, Date.now());
 }
 
 function Pred14() {
     clearBox();
     let clon = TempSelect(2).content.cloneNode(true);
     pred.appendChild(clon);
+    let range = document.querySelectorAll(".J14");
+    fillMeteo(range, Date.now());
 }
 
 //Fonction afficher le  Mois
@@ -89,14 +88,19 @@ function PredMensuel() {
     clearBox();
     let clon = TempSelect(3).content.cloneNode(true);
     pred.appendChild(clon);
+    let range = document.querySelectorAll(".Mensu");
+    fillMeteo(range, Date.now(), true);
+    //    let tempDate = new Date(Date.now()).toLocaleString("fr-ca", {
+    //        month: "long",
+    //    });
+    //    tempDate = tempDate.charAt(0).toUpperCase() + tempDate.slice(1);
+    //   document.querySelector("#calendar").innerHTML = tempDate;
 }
-
-
 
 //Permet d'effacer le div ayant le clone du template
 function clearBox(toDelete) {
     let deleter = document.getElementById(toDelete);
-    while(deleter.firstChild) {
+    while (deleter.firstChild) {
         deleter.removeChild(deleter.firstChild);
     }
 }

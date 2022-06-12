@@ -1,185 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=500px, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Météo Montréal</title>
-</head>
-<body>
-<div class="header">
-    <div class="header-logo">
-        <img src="ressources/img/logo.png" class="header-item logo">
-        <h1 class="header-item">IFAKOI</h1>
-    </div>
-    <h3 class="header-item">La Météo de chez vous</h3>
-</div>
-<div class="search-body">
-    <form class="search-form">
-        <label for="ville" class="search-form-item">
-            Il fait quoi à
-        </label>
-        <input type="text" id="ville" name="ville" class="search-form-item">
-        <input type="submit" id="submitVille" name="submitVille" value="Ifakoi"
-               class="search-form-item btn btn-primary">
-    </form>
-</div>
-<div class="meteo-body">
-    <div class="meteo-body-header">
-        <h3 class="meteo-body-header-text" id="CityName">
-            <!--Place pour le texte après la recherche: 'Voici la température à'-->
-        </h3>
-    </div>
-    <div class="meteo-body-body">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=500px, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="css/index.css" />
+        <title>Météo Montréal</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-logo">
+                <img src="ressources/img/logo.png" class="header-item logo" />
+                <h1 class="header-item">IFAKOI</h1>
+            </div>
+            <h3 class="header-item">La Météo de chez vous</h3>
+        </div>
+        <div class="search-body">
+            <form class="search-form">
+                <label for="ville" class="search-form-item">
+                    Il fait quoi à
+                </label>
+                <input
+                    type="text"
+                    id="ville"
+                    name="ville"
+                    class="search-form-item"
+                />
+                <input
+                    type="submit"
+                    id="submitVille"
+                    name="submitVille"
+                    value="Ifakoi"
+                    class="search-form-item btn btn-primary"
+                />
+            </form>
+        </div>
+        <div class="meteo-body">
+            <div class="meteo-body-header">
+                <h3 class="meteo-body-header-text" id="CityName">
+                    <!--Place pour le texte après la recherche: 'Voici la température à'-->
+                </h3>
+            </div>
+            <div class="meteo-body-body"></div>
+        </div>
 
-    </div>
-</div>
+        <div id="prediction"></div>
 
+        <div class="footer">
+            <div class="btn-group dropup footer-item">
+                <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle footer-body-item"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    Prévisions
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="jours3"
+                            href="#"
+                            onclick="Pred3()"
+                        >
+                            3 Jours
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="jours7"
+                            href="#"
+                            onclick="Pred7()"
+                        >
+                            7 Jours
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="jours14"
+                            href="#"
+                            onclick="Pred14()"
+                        >
+                            14 Jours
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            id="mensuel"
+                            href="#"
+                            onclick="PredMensuel()"
+                        >
+                            Mensuel
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-<div id="prediction"></div>
+        <template class="template">
+            <table>
+                <tr>
+                    <th class="JJ" rowspan="4" id="day1"></th>
+                </tr>
 
+                <tr>
+                    <td class="JJ" id="days2"></td>
+                </tr>
 
-<div class="footer">
-    <div class="btn-group dropup footer-item">
-        <button type="button" class="btn btn-primary dropdown-toggle footer-body-item" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            Prévisions
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><button type="button" class="dropdown-item" id="jours3" href="#" onclick="Pred3()" >3 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="jours7" href="#"  onclick="Pred7()">7 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="jours14" href="#" onclick="Pred14()">14 Jours</button></li>
-            <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="PredMensuel()">Mensuel</button></li>
-        </ul>
-    </div>
-</div>
+                <tr>
+                    <td class="JJ" id="day3"></td>
+                </tr>
 
+                <tr>
+                    <td class="JJ" id="day4"></td>
+                </tr>
+            </table>
+        </template>
 
+        <template class="template">
+            <table>
+                <tr>
+                    <td class="J7" id="TD7-1"></td>
+                    <td class="J7" id="TD7-2"></td>
+                    <td class="J7" id="TD7-3"></td>
+                    <td class="J7" id="TD7-4"></td>
+                    <td class="J7" id="TD7-5"></td>
+                    <td class="J7" id="TD7-6"></td>
+                    <td class="J7" id="TD7-7"></td>
+                </tr>
+            </table>
+        </template>
 
-<template class = "template" >
-    <table>
-        <tr class="JJ">
-            <th rowspan="4" id="day1">1 jours</th>
-        </tr>
+        <template class="template">
+            <table>
+                <tr>
+                    <td class="J14" id="TD14-1"></td>
+                    <td class="J14" id="TD14-2"></td>
+                    <td class="J14" id="TD14-3"></td>
+                    <td class="J14" id="TD14-4"></td>
+                    <td class="J14" id="TD14-5"></td>
+                    <td class="J14" id="TD14-6"></td>
+                    <td class="J14" id="TD14-7"></td>
+                </tr>
+                <tr>
+                    <td class="J14" id="TD14-8"></td>
+                    <td class="J14" id="TD14-9"></td>
+                    <td class="J14" id="TD14-10"></td>
+                    <td class="J14" id="TD14-11"></td>
+                    <td class="J14" id="TD14-12"></td>
+                    <td class="J14" id="TD14-13"></td>
+                    <td class="J14" id="TD14-14"></td>
+                </tr>
+            </table>
+        </template>
 
-        <tr>
-            <td class="JJ" id="days2">jours 2</td>
-        </tr>
-
-        <tr>
-            <td class="JJ" id="day3">jours 3</td>
-        </tr>
-
-        <tr>
-            <td class="JJ" id="day4">jours 4</td>
-        </tr>
-
-    </table>
-</template>
-
-
-<template class = "template" >
-    <table>
- <tr>
-     <td class="J7" id="TD7-1">jours 2</td>
-     <td class="J7" id="TD7-2">jours 3</td>
-     <td class="J7" id="TD7-3">jours 4</td>
-     <td class="J7" id="TD7-4">jours 5</td>
-     <td class="J7" id="TD7-5">jours 6</td>
-     <td class="J7" id="TD7-6">jours 7</td>
-     <td class="J7" id="TD7-7">jours 8</td>
- </tr>
-
-</table>
-
-</template>
-
-<template class = "template" >
-    <table>
-        <tr>
-            <td class="J14" id="TD14-1">jours 2</td>
-            <td class="J14" id="TD14-2">jours 3</td>
-            <td class="J14" id="TD14-3">jours 4</td>
-            <td class="J14" id="TD14-4">jours 5</td>
-            <td class="J14" id="TD14-5">jours 6</td>
-            <td class="J14" id="TD14-6">jours 7</td>
-            <td class="J14" id="TD14-7">jours 8</td>
-        </tr>
-        <tr>
-            <td class="J14" id="TD14-8">jours 2</td>
-            <td class="J14" id="TD14-9">jours 3</td>
-            <td class="J14" id="TD14-10">jours 4</td>
-            <td class="J14" id="TD14-11">jours 5</td>
-            <td class="J14" id="TD14-12">jours 6</td>
-            <td class="J14" id="TD14-13">jours 7</td>
-            <td class="J14" id="TD14-14">jours 8</td>
-        </tr>
-
-    </table>
-</template>
-
-<template class = "template" >
-
-    <table>
-        <tr class="MensuTitle" id="calendar">
-            <td colspan="7">Juin</td>
-        </tr>
-        <tr>
-            <td class="Mensu" id="TDM-1">jours 2</td>
-            <td class="Mensu" id="TDM-2">jours 3</td>
-            <td class="Mensu" id="TDM-3">jours 4</td>
-            <td class="Mensu" id="TDM-4">jours 5</td>
-            <td class="Mensu" id="TDM-5">jours 6</td>
-            <td class="Mensu" id="TDM-6">jours 7</td>
-            <td class="Mensu" id="TDM-7">jours 8</td>
-        </tr>
-        <tr>
-            <td class="Mensu" id="TDM-8">jours 2</td>
-            <td class="Mensu" id="TDM-9">jours 3</td>
-            <td class="Mensu" id="TDM-10">jours 4</td>
-            <td class="Mensu" id="TDM-11">jours 5</td>
-            <td class="Mensu" id="TDM-12">jours 6</td>
-            <td class="Mensu" id="TDM-13">jours 7</td>
-            <td class="Mensu" id="TDM-14">jours 8</td>
-        </tr>
-        <tr>
-            <td class="Mensu" id="TDM-15">jours 2</td>
-            <td class="Mensu" id="TDM-16">jours 3</td>
-            <td class="Mensu" id="TDM-17">jours 4</td>
-            <td class="Mensu" id="TDM-18">jours 5</td>
-            <td class="Mensu" id="TDM-19">jours 6</td>
-            <td class="Mensu" id="TDM-20">jours 7</td>
-            <td class="Mensu" id="TDM-21">jours 8</td>
-        </tr>
-        <tr>
-            <td class="Mensu" id="TDM-22">jours 2</td>
-            <td class="Mensu" id="TDM-23">jours 3</td>
-            <td class="Mensu" id="TDM-24">jours 4</td>
-            <td class="Mensu" id="TDM-25">jours 5</td>
-            <td class="Mensu" id="TDM-26">jours 6</td>
-            <td class="Mensu" id="TDM-27">jours 7</td>
-            <td class="Mensu" id="TDM-28">jours 8</td>
-        </tr>
-        <tr>
-            <td class="Mensu" id="TDM-29">jours 2</td>
-            <td class="Mensu" id="TDM-30">jours 3</td>
-            <td class="Mensu" id="TDM-31">jours 4</td>
-            <td class="Mensu"></td>
-            <td class="Mensu"></td>
-            <td class="Mensu"></td>
-            <td class="Mensu"></td>
-        </tr>
-
-    </table>
-
-</template>
-
-
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script/index.js"></script>
-<script src="script/Meteo.js"></script>
-<script src="script/utils.js"></script>
+        <template class="template">
+            <table>
+                <tr class="MensuTitle" id="calendar">
+                    <td colspan="7"></td>
+                </tr>
+                <tr>
+                    <td class="Mensu" id="TDM-1"></td>
+                    <td class="Mensu" id="TDM-2"></td>
+                    <td class="Mensu" id="TDM-3"></td>
+                    <td class="Mensu" id="TDM-4"></td>
+                    <td class="Mensu" id="TDM-5"></td>
+                    <td class="Mensu" id="TDM-6"></td>
+                    <td class="Mensu" id="TDM-7"></td>
+                </tr>
+                <tr>
+                    <td class="Mensu" id="TDM-8"></td>
+                    <td class="Mensu" id="TDM-9"></td>
+                    <td class="Mensu" id="TDM-10"></td>
+                    <td class="Mensu" id="TDM-11"></td>
+                    <td class="Mensu" id="TDM-12"></td>
+                    <td class="Mensu" id="TDM-13"></td>
+                    <td class="Mensu" id="TDM-14"></td>
+                </tr>
+                <tr>
+                    <td class="Mensu" id="TDM-15"></td>
+                    <td class="Mensu" id="TDM-16"></td>
+                    <td class="Mensu" id="TDM-17"></td>
+                    <td class="Mensu" id="TDM-18"></td>
+                    <td class="Mensu" id="TDM-19"></td>
+                    <td class="Mensu" id="TDM-20"></td>
+                    <td class="Mensu" id="TDM-21"></td>
+                </tr>
+                <tr>
+                    <td class="Mensu" id="TDM-22"></td>
+                    <td class="Mensu" id="TDM-23"></td>
+                    <td class="Mensu" id="TDM-24"></td>
+                    <td class="Mensu" id="TDM-25"></td>
+                    <td class="Mensu" id="TDM-26"></td>
+                    <td class="Mensu" id="TDM-27"></td>
+                    <td class="Mensu" id="TDM-28"></td>
+                </tr>
+                <tr>
+                    <td class="Mensu" id="TDM-29"></td>
+                    <td class="Mensu" id="TDM-30"></td>
+                    <td class="Mensu" id="TDM-31"></td>
+                    <td class="Mensu"></td>
+                    <td class="Mensu"></td>
+                    <td class="Mensu"></td>
+                    <td class="Mensu"></td>
+                </tr>
+            </table>
+        </template>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script/index.js"></script>
+    <script src="script/Meteo.js"></script>
+    <script src="script/utils.js"></script>
 </html>
-
-
