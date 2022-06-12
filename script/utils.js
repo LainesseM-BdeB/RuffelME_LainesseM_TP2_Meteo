@@ -16,6 +16,7 @@ function parseMeteo() {
         });
 }
 
+
 function findWeather(temp) {
     let weather;
     if (temp <= 0) {

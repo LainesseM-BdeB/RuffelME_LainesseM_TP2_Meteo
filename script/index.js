@@ -6,11 +6,25 @@ const fullMeteoData = new Map();
 document.querySelector("#submitVille").addEventListener("click", evt => {
     evt.preventDefault()
     //Do what you want
+    Pred3();
+    ChangeCityName();
 })
 
+function ChangeCityName() { 
 
+    let cityValue = document.getElementById("ville").value;
+    GetCityText(cityValue);
 
-let app_div = document.getElementById("app");
+}
+
+function GetCityText(citySpace) { 
+
+    let cityName = document.getElementById("CityName");
+    cityName.innerHTML = citySpace;
+
+}
+
+let pred = document.getElementById("prediction");
 
 
 window.onload = function() {}
@@ -40,18 +54,18 @@ document.querySelector("#mensuel").addEventListener("click", (e) => {
 function Pred3() {
     clearBox();
     let clon = TempSelect(0).content.cloneNode(true);
-    app_div.appendChild(clon);
+    pred.appendChild(clon);
 }
 function Pred7() {
     clearBox();
     let clon = TempSelect(1).content.cloneNode(true);
-    app_div.appendChild(clon);
+    pred.appendChild(clon);
 }
 
 function Pred14() {
     clearBox();
     let clon = TempSelect(2).content.cloneNode(true);
-    app_div.appendChild(clon);
+    pred.appendChild(clon);
 }
 
 
@@ -59,7 +73,7 @@ function Pred14() {
 function PredMensuel() {
     clearBox();
     let clon = TempSelect(3).content.cloneNode(true);
-    app_div.appendChild(clon);
+    pred.appendChild(clon);
 }
 
 
@@ -75,8 +89,8 @@ function clearBox(toDelete) {
 
 // template pour les cases 
 function clearBox() {
-    while (app_div.firstChild) {
-        app_div.removeChild(app_div.firstChild);
+    while (pred.firstChild) {
+        pred.removeChild(pred.firstChild);
     }
 }
 
