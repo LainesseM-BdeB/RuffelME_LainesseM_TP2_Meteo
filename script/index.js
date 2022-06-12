@@ -2,6 +2,7 @@
 const fullMeteoData = new Map();
 
 let app_div = document.getElementById("app");
+let app_div2 = document.getElementById("dodo");
 
 window.onload = function() {}
 
@@ -21,6 +22,41 @@ document.querySelector("#mensuel").addEventListener("click", (e) => {
 });
 
 
+function InsertCity() {
+    
+
+
+
+}
+
+
+function findWeather(temp) {
+    let weather;
+    if (temp <= 0) {
+        weather = "icon-neige.png";
+    } else if (temp <= 10) {
+        weather = "icon-pluie.png";
+    } else if (temp <= 20) {
+        weather = "icon-nuage.png";
+    } else {
+        weather = "icon-soleil.png";
+    }
+    return weather;
+}
+
+
+
+/*
+function CreateImage(weather) {
+   
+  
+    let image = new Image();
+    image.src = findWeather(weather);
+    app_div2.append(image);
+  }
+
+
+*/
 
 //Permet de choisir quelle template que l'on veut lors de la creation des fonctions(N.B. a choisir selon l'ordre de creation dans le .html)
    function TempSelect(whichTemp) {

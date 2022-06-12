@@ -19,13 +19,13 @@ function parseMeteo() {
 function findWeather(temp) {
     let weather;
     if (temp <= 0) {
-        weather = "icon-neige.png";
+        weather = "ressources/img/icon-neige.png";
     } else if (temp <= 10) {
-        weather = "icon-pluie.png";
+        weather = "ressources/img/icon-pluie.png";
     } else if (temp <= 20) {
-        weather = "./ressources/img/icon-nuage.png";
+        weather = "ressources/img/icon-nuage.png";
     } else {
-        weather = "./ressources/img/icon.soleil.png";
+        weather = "ressources/img/icon-soleil.png";
     }
     return weather;
 }
@@ -34,12 +34,11 @@ function findWeather(temp) {
 let tempToSwap = document.getElementById("tempToSwap");
 
 function CreateImage(weather) {
-    let images = document.getElementById("image");
-    let img = document.createElement("img");
-    img.setAttribute("src", weather);
-    images.appendChild(img);
-    return false;
+  let image = new Image();
+    image.src = findWeather(weather);
+    app_div2.append(image);
   }
+  
 
 function swap() { 
 

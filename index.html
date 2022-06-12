@@ -41,7 +41,7 @@
             Prévisions
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><button type="button" class="dropdown-item" id="jours7" href="#" onclick="Pred3()" >3 Jours</button></li>
+            <li><button type="button" class="dropdown-item" id="jours7" href="#" onclick="CreateImage(-2)" >3 Jours</button></li>
             <li><button type="button" class="dropdown-item" id="jours14" href="#"  onclick="Pred7()">7 Jours</button></li>
             <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="Pred14()">14 Jours</button></li>
             <li><button type="button" class="dropdown-item" id="mensuel" href="#" onclick="PredMensuel()">Mensuel</button></li>
@@ -174,10 +174,10 @@
 <template> 
 
     <p id="tempToSwap"></p>
-    <div id="image"></div>
+    <div id="dodo"></div>
 
 </template>
-
+<div id="dodo"></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script/index.js"></script>
