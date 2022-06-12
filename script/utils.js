@@ -16,6 +16,18 @@ function parseMeteo() {
         });
 }
 
+function fillMeteo(range, date, mensuel = false) {
+    let i = 0;
+    let day = new Date(date);
+    if (mensuel) {
+        day.setDate(0);
+    }
+    for (const box in range) {
+        createDay(fullMeteoData.get(day.toISOString().slice(0, 10)));
+        day.setDate(day.getDate() + 1);
+    }
+}
+
 function findWeather(temp) {
     let weather;
     if (temp <= 0) {
@@ -103,7 +115,6 @@ function createDay(day) {
     const dateFrame = document.createElement("div");
     dateFrame.classList.add("dateFrame");
     const dateData = document.createElement("p");
-    console.log(day.getDay);
     const day2 = day.getDay.split("-");
     dateData.innerText = day2[2] + "\n" + day2[1] + "\n" + day2[0];
     const minMaxFrame = document.createElement("div");
