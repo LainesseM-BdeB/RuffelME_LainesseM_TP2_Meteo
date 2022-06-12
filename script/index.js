@@ -26,11 +26,14 @@ function GetCityText(citySpace) {
 
 let pred = document.getElementById("prediction");
 
-window.onload = function () {};
-
 window.onload = function () {
     parseMeteo();
 };
+
+document.querySelector("#submitVille").addEventListener("click", (evt) => {
+    evt.preventDefault();
+    //Do what you want
+});
 
 document.querySelector("#jours7").addEventListener("click", (e) => {
     console.log(e.target.id);
