@@ -2,7 +2,7 @@
 const fullMeteoData = new Map();
 
 let app_div = document.getElementById("app");
-let app_div2 = document.getElementById("dodo");
+
 
 window.onload = function() {}
 

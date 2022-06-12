@@ -34,9 +34,10 @@ function findWeather(temp) {
 let tempToSwap = document.getElementById("tempToSwap");
 
 function CreateImage(weather) {
-  let image = new Image();
+    let idImage = document.getElementById("image");
+    let image = new Image();
     image.src = findWeather(weather);
-    app_div2.append(image);
+    idImage.append(image);
   }
   
 
