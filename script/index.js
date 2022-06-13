@@ -62,6 +62,13 @@ function Pred3() {
     pred.appendChild(clon);
     let range = document.querySelectorAll(".JJ");
     fillMeteo(range, Date.now());
+    const day1Temp = document.querySelector("#day1 .tempFrame");
+    const day1Date = document.querySelector("#day1 .dateFrame");
+    const day1MinMax = document.querySelectorAll("#day1 .minMaxTemp");
+    day1Temp.style.fontSize = "50px";
+    day1Date.style.fontSize = "50px";
+    day1MinMax[0].style.fontSize = "30px";
+    day1MinMax[1].style.fontSize = "30px";
 }
 function Pred7() {
     clearBox();
