@@ -6,10 +6,7 @@ document.querySelector("#submitVille").addEventListener("click", (evt) => {
     //Do what you want
     Pred3();
     ChangeCityText();
- 
 });
-
-
 
 function ChangeCityText() {
     let cityValue = document.getElementById("ville").value;
@@ -65,7 +62,6 @@ function Pred3() {
     pred.appendChild(clon);
     let range = document.querySelectorAll(".JJ");
     fillMeteo(range, Date.now());
-
 }
 function Pred7() {
     clearBox();
@@ -84,12 +80,13 @@ function Pred14() {
 }
 
 //Fonction afficher le  Mois
-function PredMensuel() {
+function PredMensuel(date) {
     clearBox();
+    console.log(date);
     let clon = TempSelect(3).content.cloneNode(true);
     pred.appendChild(clon);
     let range = document.querySelectorAll(".Mensu");
-    fillMeteo(range, Date.now(), true);
+    fillMeteo(range, date, true);
     //    let tempDate = new Date(Date.now()).toLocaleString("fr-ca", {
     //        month: "long",
     //    });

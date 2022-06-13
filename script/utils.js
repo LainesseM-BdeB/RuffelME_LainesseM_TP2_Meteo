@@ -16,19 +16,25 @@ function parseMeteo() {
         });
 }
 
-
-
-
-
 function fillMeteo(range, date, mensuel = false) {
     let day = new Date(date);
+    console.warn(day);
     let max;
     day.setDate(day.getDate() - 1);
+    console.warn(day);
     if (mensuel) {
         day.setDate(0);
+        console.warn(day);
         let tempDate = new Date(day);
+        console.warn(tempDate);
         tempDate.setDate(tempDate.getDate() - 1);
-        max = tempDate.getMonth() + 1;
+        console.warn(tempDate.getMonth());
+        if (tempDate.getMonth() === 11) {
+            //JANVIER DNT
+            max = 0;
+        } else {
+            max = tempDate.getMonth() + 1;
+        }
         console.log(day.getMonth(), max);
     }
     for (const box of range) {
@@ -59,9 +65,6 @@ function findWeather(temp) {
     }
     return weather;
 }
-
-
-
 
 function selectMonth(month) {
     let meteoMonth;
@@ -162,8 +165,6 @@ function createDay(day) {
     row2.appendChild(minMaxFrame);
     dayFrame.appendChild(row1);
     dayFrame.appendChild(row2);
-
-
 
     return dayFrame;
 }
