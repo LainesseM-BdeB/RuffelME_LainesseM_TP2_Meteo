@@ -102,7 +102,7 @@
                             class="dropdown-item"
                             id="mensuel"
                             href="#"
-                            onclick="PredMensuel()"
+                            onclick="PredMensuel(Date.now())"
                         >
                             Mensuel
                         </button>
@@ -171,7 +171,155 @@
         <template class="template">
             <table>
                 <tr class="MensuTitle" id="calendar">
-                    <td colspan="7"></td>
+                    
+                    <td colspan="7" > <div class="btn-group dropup footer-item">
+                        
+                        <button
+                            type="button"
+                            class="btn btn-primary dropdown-toggle footer-body-item"
+                            href="#"
+                            role="button"
+                            id="MoisAChoisir"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Juin
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Janvier"
+                                    href="#"
+                                    onclick="PredMensuel(Date.now())"
+                                >
+                                    Janvier
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Fevrier"
+                                    href="#"
+                                    onclick="Pred7()"
+                                >
+                                    Février
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Mars"
+                                    href="#"
+                                    onclick="Pred14()"
+                                >
+                                    Mars
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Avril"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Avril
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Mai"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Mai
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Juin"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Juin
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Juillet"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Juillet
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Aout"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Août
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Septembre"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Septembre
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Octobre"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Octobre
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Novembre"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Novembre
+                                </button>
+                            </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    class="dropdown-item"
+                                    id="Decembre"
+                                    href="#"
+                                    onclick="PredMensuel()"
+                                >
+                                    Décembre
+                                </button>
+                            </li>
+                        </ul>
+                    </div></td>
                 </tr>
                 <tr>
                     <td class="Mensu" id="TDM-1"></td>

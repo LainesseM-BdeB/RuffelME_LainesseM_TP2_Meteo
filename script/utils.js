@@ -16,6 +16,10 @@ function parseMeteo() {
         });
 }
 
+
+
+
+
 function fillMeteo(range, date, mensuel = false) {
     let day = new Date(date);
     let max;
@@ -55,6 +59,9 @@ function findWeather(temp) {
     }
     return weather;
 }
+
+
+
 
 function selectMonth(month) {
     let meteoMonth;
@@ -155,6 +162,8 @@ function createDay(day) {
     row2.appendChild(minMaxFrame);
     dayFrame.appendChild(row1);
     dayFrame.appendChild(row2);
+
+
 
     return dayFrame;
 }
