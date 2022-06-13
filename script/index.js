@@ -84,12 +84,12 @@ function Pred14() {
 }
 
 //Fonction afficher le  Mois
-function PredMensuel(mois) {
+function PredMensuel() {
     clearBox();
     let clon = TempSelect(3).content.cloneNode(true);
     pred.appendChild(clon);
     let range = document.querySelectorAll(".Mensu");
-    fillMeteo(range, mois, true);
+    fillMeteo(range, Date.now(), true);
     //    let tempDate = new Date(Date.now()).toLocaleString("fr-ca", {
     //        month: "long",
     //    });
